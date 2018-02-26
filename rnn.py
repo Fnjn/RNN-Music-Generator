@@ -15,19 +15,18 @@ class RNN(nn.Module):
         super().__init__()
         self.input_dim = input_dim
         self.hidden_dim = hidden_dim
-        self.lstm = nn.LSTM(input_dim, hidden_dim)
+        self.lstm1 = nn.LSTM(input_dim, hidden_dim, num_layers=3)
         self.hidden2tag = nn.Linear(hidden_dim, tagset_size)
         self.hidden = self.init_hidden()
 
     def init_hidden(self):
-        h = torch.zeros(1,1,self.hidden_dim)
-        c = torch.zeros(1,1,self.hidden_dim)
+        h = torch.zeros(3,1,self.hidden_dim)
+        c = torch.zeros(3,1,self.hidden_dim)
         return (Variable(h.cuda()), Variable(c.cuda()))
 
     def forward(self, sentence):
         lstm_out, self.hidden = self.lstm(sentence.view(len(sentence), 1, -1), self.hidden)
-        tag_space = self.hidden2tag(lstm_out.view(len(sentence), -1))
-        tag_scores = F.log_softmax(tag_space, dim=1)
+        tag_scores = self.hidden2tag(lstm_out.view(len(sentence), -1))
         return tag_scores
 
 
