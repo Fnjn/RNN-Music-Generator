@@ -1,0 +1,21 @@
+X:88
+T:Beamfou amcher Hor STo'linat Ohmain
+R:airaai tourad
+R:a nam, iallchien
+R:a:rancen obs Beua
+M:6/8
+L:1/8
+K:G
+xt V3 E3 | GAdg 
+af g2 |
+e2 a2 t3 |
+A2 G2 (3e^fu | vbiiitto:: banl Cuilags Hach
+R:fral Ponant Mattrit Thar anc.
+Z:id:hn-trie- 1
+M:2/4
+L:2/8
+Q:114=10
+K:Am
+F2E |1
+D2G) G1 GDF  D/G/G/B/ | 
+c2 c2 B2 | E2 c^c A8 :|

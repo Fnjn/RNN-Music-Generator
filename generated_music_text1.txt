@@ -1,0 +1,31 @@
+X:1
+T: Liu tote obdariel and
+R:aise
+arand tham Oem"LON Geanlais O'Deirle \'O. Cehssinau
+C:Th Gabas Mel
+R:aimbamminll Limammay
+A:Sre hon Sto Asten Oe"MDyatris Rost, The Gimmia bisoiphsco? nataian
+T:Bince
+R:on bonsa-r
+R:d:hr- be-ligd
+Z:id:hansoaptoit a ewmourd Rellgc.
+C:Bokle
+Z:id:hn-par0-09
+M:1/4
+L:1/8
+K:G
+n:mabs
+cdef e3 eG cdc | A2 :|
+|: d f=fe | e2fg ddB | c2d cB | G2 G>A B>A|cBAA | B2c Ad cB|c2 d2:|
+P:Varieqlanf6 :: 1
+|: D2G F>E | G4 F2 | G3 G3 |A3 GAGG | G4 :|
+V:rriattons
+V:1
+"D"Ac BB|A2 G2 F2 ||
+"D>F2 E EF | G3F FGG) |
+A2GA B2A2 | GAB deg2 | e2e2 BddB | B6f2 |
+B2A2 A2e2 | d32 (a4b2 [bothainchon: 1
+B2 B2G2 D2A | AB c2 dc | 
+d2 G2 G2AG | F2A | A3 |:
+V:D
+D2 ||
