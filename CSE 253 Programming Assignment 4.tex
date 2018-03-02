@@ -46,7 +46,7 @@
 
 \maketitle
 \begin{abstract}
-In this assignment, we implemented a char-based generative LSTM model and trained it to “write” songs. We also explore effects of different hyper-parameters to our model. We use different temperature parameters to generate music samples. 1-layer hidden unit of =XXX reached YYY; dropout rate of dr=XXX reached YYY; optimizer of Adam reached 2.141. 
+In this assignment, we implemented a char-based generative LSTM model and trained it to “write” songs. We also explore effects of different hyper-parameters to our model. We use different temperature parameters to generate music samples. We found that the more hidden units the network learns the better, and increasing dropout rate to 0.3 helping reduces the loss to 2.62. Adam optimizer is the best optimizer we use, it attains a loss of 2.141. 
 \end{abstract}
 
 \section{Music Generation}
@@ -290,10 +290,43 @@ The training and validation loss keeps going down, and it will continue going do
 
 
 \section{Hidden Units}
+In this part, we experimented with different number of units in the hidden layer. We used 25, 50 and 75 units. The plots of loss vs epochs are shown below. Three experiments give final test errors of 2.96, 2.82 and 2.79 respectively. We observe that as number of units increases, both train and test losses decrease, which indicates that more hidden units can learn the internal features better. 
 \subsection{Plots}
-\subsection{Discussion}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{will/loss_25_units.png}
+\caption{Loss with 25 hidden units}
+\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{will/loss_50_units.png}
+\caption{Loss with 50 hidden units}
+\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{will/loss_75_units.png}
+\caption{Loss with 75 hidden units}
+\end{figure}
 
+ \newpage
 \section{Dropout}
+In this part, we experimented with different number of units in the hidden layer. We used 25, 50 and 75 units. The plots of loss vs epochs are shown below. Three experiments give final test errors of 2.96, 2.82 and 2.79 respectively. We observe that as number of units increases, both train and test losses decrease, which indicates that more hidden units can learn the internal features better.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{will/loss_drop_01.png}
+\caption{Loss with 0.1 dropout}
+\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{will/loss_drop_02.png}
+\caption{Loss with 0.2 dropout}
+\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{will/loss_drop_03.png}
+\caption{Loss with 0.3 dropout}
+\end{figure}
 \newpage
 \section{Optimizer Exploration}
 \subsection{Plots}
