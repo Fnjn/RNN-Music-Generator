@@ -46,7 +46,7 @@
 
 \maketitle
 \begin{abstract}
-
+In this assignment, we implemented a char-based generative LSTM model and trained it to “write” songs. We also explore effects of different hyper-parameters to our model. We use different temperature parameters to generate music samples. 1-layer hidden unit of =XXX reached YYY; dropout rate of dr=XXX reached YYY; optimizer of Adam reached 2.141. 
 \end{abstract}
 
 \section{Music Generation}
@@ -294,17 +294,83 @@ The training and validation loss keeps going down, and it will continue going do
 \subsection{Discussion}
 
 \section{Dropout}
-
+\newpage
 \section{Optimizer Exploration}
+\subsection{Plots}
+In this section, we explore the performance of different optimizers. Specifically, we used the 1-layer LSTM with 100 hidden units, and applied learning rate of 0.001. For optimizers, we compared Adam, Adagrad and RMSProp. The following figures are train/valid set loss against epochs.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{pics/Adam_loss.png}
+\caption{Loss using Adam optimizer}
+\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{pics/Adgrad_loss.png}
+\caption{Loss using Adagrad optimizer}
+\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{pics/RMSprop_loss.png}
+\caption{Loss using RMSprop}
+\end{figure}
+\subsection{Discussion}
+Note that among the three optimizers we tried, Adam turns out to have the best performance on our model, RMSprop holds the second place, while the Adagrad has the lowest performance. 
 
+This can understand that RMSProp resolve the Adagrad’s diminishing learning rates problem. Also, RMSprop divides the learning rate by an exponentially decaying average of squared gradients. For Adam, it not only stores the exponentially decaying average of the past squared gradients like RMSprop, but also  keeps an exponentially decaying average of past gradient. Thus, in practice Adam usually works well and is better to other adaptive learning-method algorithm.
+\newpage
 \section{Feature Evaluation}
+\subsection{Heat Plots}
+One way to understand the working mechanism of the LSTM generated model, is to visualize the hidden unit output with the generated text and plot them together as a heat map. Using the model with Adam optimizer in Section 5, we pick one of the hidden unit output for the heat plot. Also, we generated the text of 900 characters. 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{pics/heat_map.png}
+\caption{Heatmap for one Hidden Unit Output with Generated Text}
+\end{figure}
+\subsection{Discussion}
+From the plot, we can see that for the header of the .abc text, the neuron tends to have lower activation. On contrast, for the body of the .abc text, it tends to have higher activation. One thing we can know about this neuron is that it can distinguish the header from the body. Thus, our whole LSTM network did learn the structure of the .abc text. The other thing we can tell is this neuron may involve more in the generation of the body of the text. Thus, it “cares” more on the tune instead of the style.
 
+Therefore, we can conclude that the activations of neurons reflect the final output of the LSTM model.
+
+\newpage
 \section{Contributions}
+Fanjin Zeng
+implemented the main structure of the code. Generalized the code for later experiments.
 
+
+
+Xinyue Ou
+finished the experiments and writing with part (a) and (b).
+
+
+
+Yuhan Chen
+finished the experiments and writing with part (c) and (d).
+
+
+
+He Qin
+finished the experiments and writing with part (e) and (f).
 
 
 \section{References}
-[1] Bishop, C. M., {\it Neural networks for pattern recognition}, Oxford: Oxford University Press, 2013. \\
+[1] The Unreasonable Effectiveness of Recurrent Neural Networks, 
+\url{http://karpathy.github.io/2015/05/21/rnn-effectiveness/} \\
+
+[2] Understanding LSTM Networks, 
+
+\url{http://colah.github.io/posts/2015-08-Understanding-LSTMs/}\\
+
+[3] Sequence Models and Long-Short Term Memory Networks, Pytorch,
+ 
+ \url{http://pytorch.org/tutorials/beginner/nlp/sequence_models_tutorial.html} \\
+
+[4] Generating Names with a Character-Level RNN, Pytorch,
+ 
+ \url{http://pytorch.org/tutorials/intermediate/char_rnn_generation_tutorial.html}  \\
+
+[3] Heatmap with text in each cell with matplotlib's pyplot,
+
+ \url{https://stackoverflow.com/questions/25071968/heatmap-with-text-in-each-cell-with-matplotlibs-pyplot}\\
 
 
 
