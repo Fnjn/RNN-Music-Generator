@@ -14,3 +14,7 @@ implemented a char-based generative LSTM model and trained it to “write” son
 ![heat map](pics/heat_map.png)
 
 ## Contributors
+[Fanjin Zeng](https://github.com/Fnjn)
+[Xinyue Ou](https://github.com/plrectco)
+[Yuhan Chen](https://github.com/willchenyh)
+[He Qin](https://github.com/qinacme)
